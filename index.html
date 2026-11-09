@@ -12,10 +12,67 @@
 .journey-index-tools{margin-top:10px}.journey-index-toggle{width:100%;border:1px solid var(--line);background:#fffdf8;color:var(--ink);padding:10px 12px;text-align:left;font-size:11px;display:flex;justify-content:space-between;align-items:center}.journey-index-list[hidden]{display:none}.journey-index-list{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:9px;background:#f5efe4;border:1px solid var(--line);border-top:0}.journey-index-item{background:#fffdf8;border:1px solid transparent;text-align:left;padding:8px;font-size:10px;color:var(--ink);line-height:1.5}.journey-index-item.active{border-color:var(--rust);background:#f1e5d8}.journey-index-item small{display:block;color:var(--muted);font-size:9px}
 
 .journey-intro{font-size:12px;line-height:1.8;color:var(--muted);margin:8px 0 16px}.journey-cover{position:relative;overflow:hidden;min-height:210px;padding:22px;color:#f7f0e3;background:linear-gradient(125deg,#262b27,#4a5044 48%,#92765a);display:flex;flex-direction:column;justify-content:flex-end;margin-bottom:16px}.journey-cover:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,#d2b98a55,transparent 34%),linear-gradient(135deg,transparent 45%,#1118)}.journey-cover>*{position:relative}.journey-cover .edition{color:#dfcda9}.journey-cover h2{font-size:31px;font-weight:500;margin:12px 0 5px;letter-spacing:.04em}.journey-cover p{font-size:12px;color:#e7dfd0;margin:0;line-height:1.7}.journey-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.journey-meta span{font:10px Arial,sans-serif;border:1px solid #ffffff55;padding:5px 8px;color:#eee5d6}.journey-modes{display:flex;gap:7px;margin:14px 0 10px}.journey-modes button{flex:1;border:1px solid var(--line);background:transparent;padding:9px 8px;font-size:11px;color:var(--muted)}.journey-modes button.active{background:var(--ink);border-color:var(--ink);color:#fff8e9}.journey-map-wrap{position:relative;border:1px solid var(--line);background:#e8e0d2}#journeyMap{height:310px;width:100%;z-index:1}.journey-map-caption{font-size:10px;color:var(--muted);padding:8px 10px;background:#f5efe4;line-height:1.6}.journey-reading-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 0;padding:10px 12px;background:#f2ece1;border:1px solid var(--line);font-size:11px}.journey-spoiler-toggle{display:flex;align-items:center;gap:8px;color:var(--ink);cursor:pointer}.journey-spoiler-toggle input{accent-color:var(--rust);width:16px;height:16px}.journey-spoiler-note{font-size:10px;color:var(--muted);line-height:1.6}.journey-index-item.locked{opacity:.52;background:#f0ece5;cursor:not-allowed}.journey-character-panel{margin-top:18px;padding:15px;background:#fffdf8;border:1px solid var(--line)}.journey-character-panel h3{font-size:16px;font-weight:500;margin:0 0 5px}.journey-character-panel>p{font-size:11px;line-height:1.7;color:var(--muted);margin:0 0 10px}.journey-character-map{width:100%;height:auto;display:block}.journey-character-map .link{stroke:#b9a995;stroke-width:1.5;fill:none}.journey-character-map .node{fill:#f2e8da;stroke:#9b563d;stroke-width:1.3}.journey-character-map .node-main{fill:#e8d4c4}.journey-character-map text{font-family:inherit;fill:#38342e}.journey-character-map .name{font-size:13px;font-weight:600}.journey-character-map .role{font-size:9px;fill:#776d60}.journey-character-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.journey-character-notes div{padding:9px;background:#f5f0e8;font-size:10px;line-height:1.65;color:#5f594e}.journey-reading-prompt{margin-top:12px;padding:12px 13px;border-left:3px solid var(--rust);background:#f5f0e8}.journey-reading-prompt strong{font-size:11px}.journey-reading-prompt p{margin:5px 0 0;font-size:11px;line-height:1.7;color:#5f594e}.journey-current{background:#fffdf8;border:1px solid var(--line);padding:15px;margin-top:13px}.journey-current-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.journey-current h3{font-size:21px;font-weight:500;margin:10px 0 4px}.journey-current .journey-chapter{font-size:10px;color:var(--rust);letter-spacing:.08em}.journey-current p{font-size:12px;line-height:1.85;color:#5f594e;margin:9px 0}.journey-location{font-size:11px;color:var(--muted);padding-top:9px;border-top:1px solid var(--line)}.journey-progress{height:4px;background:#e9e1d4;margin:13px 0 7px;overflow:hidden}.journey-progress span{display:block;height:100%;background:var(--rust);transition:width .2s}.journey-controls{display:flex;gap:8px;margin-top:12px}.journey-controls button{flex:1;padding:10px 8px;font-size:11px}.journey-controls button:disabled{opacity:.4;cursor:not-allowed}.journey-source{font-size:10px;color:var(--muted);line-height:1.7;margin-top:10px}.journey-source a{color:var(--rust)}.journey-disclaimer{font-size:10px;line-height:1.7;color:var(--muted);padding:12px;background:#f1ebdf;margin-top:12px}.journey-pin{background:var(--rust);border:2px solid #fffaf0;border-radius:50%;width:24px;height:24px;color:white;font:11px Arial;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px #0003}.journey-pin.current{background:var(--ink);width:30px;height:30px;font-weight:bold}@media(min-width:700px){#journeyMap{height:390px}}
+
+/* Editorial art direction — literature as a living, visual atlas */
+:root{--paper:#f2eee5;--paper2:#fbf9f3;--ink:#202722;--muted:#77796f;--line:#d9d5c9;--rust:#b34d35;--olive:#526b55;--gold:#c49b4d;--shadow:0 18px 44px #20272218;--blue:#314f69}
+body{background:#e8e4da;background-image:radial-gradient(#7d76651a .65px,transparent .65px);background-size:7px 7px}
+.app{max-width:760px;background:var(--paper2);box-shadow:0 0 70px #22251b20;padding-bottom:92px}
+.top{padding:27px 28px 21px;background:linear-gradient(110deg,#f8f4e9 0%,#eee6d7 60%,#e5e8dc 100%);position:relative;overflow:hidden}
+.top:after{content:"文";position:absolute;right:25px;top:-35px;font-size:190px;line-height:1;color:#9b563d0c;pointer-events:none}
+.brand{font-size:12px;letter-spacing:.28em;font-weight:700}
+.edition{letter-spacing:.16em}
+.headline{font-size:clamp(30px,6vw,43px);line-height:1.18;letter-spacing:.015em;max-width:590px;margin:21px 0 9px}
+.subhead{font-size:12px;letter-spacing:.12em}
+.content{padding:22px 24px 34px}
+.hero{min-height:300px;border-radius:2px;background:#1f2b2b;box-shadow:var(--shadow);isolation:isolate}
+.hero img{height:300px;opacity:.78;filter:saturate(.82) contrast(1.04)}
+.hero:after{inset:0;background:linear-gradient(90deg,#111b1b99 0%,transparent 75%),linear-gradient(0deg,#111b1bd9 0%,transparent 64%)}
+.hero-copy{left:24px;right:24px;bottom:23px}
+.hero-copy small{color:#e6c78b}
+.hero-copy h2{font-size:clamp(27px,5vw,35px);letter-spacing:.03em}
+.hero-copy p{font-size:13px;max-width:380px;line-height:1.7}
+.art-index{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:10px;margin:15px 0 23px}
+.art-tile{position:relative;min-height:142px;overflow:hidden;background:#d7d0c1;border:1px solid var(--line);color:white}
+.art-tile img{width:100%;height:142px;object-fit:cover;display:block;filter:saturate(.82);transition:transform .5s}
+.art-tile:first-child img{object-position:center 32%}
+.art-tile:hover img{transform:scale(1.04)}
+.art-tile:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#111b)}
+.art-caption{position:absolute;z-index:1;left:10px;right:8px;bottom:9px;font-size:11px;line-height:1.35}
+.art-caption small{display:block;font:9px Arial,sans-serif;letter-spacing:.13em;color:#e7cf9f;margin-bottom:3px}
+.section-kicker{letter-spacing:.22em;font-weight:600}
+.section-title{font-size:23px;letter-spacing:.025em}
+.searchbox{border-radius:2px;background:#fff;border-color:#d5d0c4;padding:13px 15px}
+.search-submit{background:var(--rust);padding:9px 15px}
+.feature-grid{gap:10px}
+.feature{position:relative;background:#f4f0e6;border:1px solid #e0d9ca;min-height:145px;padding:15px;transition:transform .2s,border-color .2s}
+.feature:hover{transform:translateY(-2px);border-color:#b8a58b}
+.feature:nth-child(2){background:#e9eee8}
+.feature:nth-child(3){background:#eee8df}
+.feature:nth-child(4){background:#e9edf0}
+.feature:nth-child(5){grid-column:1/-1;min-height:118px;background:#283a3a;color:#f8f2e6;border-color:#283a3a}
+.feature:nth-child(5) p{color:#d5d6cc}
+.feature .num{color:var(--rust)}
+.feature h3{font-size:18px}
+.row-head{margin:28px 0 13px}
+.literary-climates{grid-template-columns:repeat(2,minmax(0,1fr))}
+.climate-card{position:relative;min-height:150px;padding:16px 15px 13px;border:0;border-top:2px solid var(--olive);background:linear-gradient(145deg,#f5f0e5,#ece6d8)}
+.climate-card:nth-child(3n+2){border-top-color:var(--rust);background:linear-gradient(145deg,#f4eae2,#eee2d7)}
+.climate-card:nth-child(3n){border-top-color:var(--blue);background:linear-gradient(145deg,#eaf0ee,#e2e9e5)}
+.climate-card h3{font-size:18px}
+.climate-card p{font-size:11px}
+.map-drillbar{background:#ece8dd;border-radius:2px}
+#map{height:clamp(430px,68vh,650px)}
+.place-card{grid-template-columns:112px 1fr;border:0;border-bottom:1px solid var(--line);background:transparent;padding:10px 0}
+.thumb{height:100px}
+.bottom{width:min(760px,100%);height:78px;background:#fbf9f3ed}
+.nav{font-size:11px}
+.detail{width:min(680px,100%)}
+@media(max-width:520px){.top{padding:22px 20px 17px}.content{padding:17px 16px 28px}.art-index{grid-template-columns:1fr 1fr}.art-tile:first-child{grid-column:1/-1}.art-tile:first-child,.art-tile:first-child img{height:175px;min-height:175px}.art-tile{min-height:118px}.art-tile img{height:118px}.hero,.hero img{min-height:260px;height:260px}.hero-copy{left:18px;right:18px}.literary-climates{grid-template-columns:1fr 1fr}.climate-card{padding:13px 11px;min-height:158px}.climate-card h3{font-size:16px}.place-card{grid-template-columns:88px 1fr}.thumb{height:86px}}
+@media(min-width:700px){body{padding:28px 0}.app{min-height:calc(100dvh - 56px);border:1px solid #d8d1c3}.bottom{bottom:28px;border-radius:0 0 3px 3px}}
 </style></head>
 <body><main class="app">
 <header class="top"><div class="brandline"><div class="brand">文境 · LITERARY ATLAS</div><div class="edition">VOL. 01 / CHINA & THE WORLD</div></div><h1 class="headline" id="pageTitle">让每一座城市<br>都有值得阅读的故事</h1><div class="subhead" id="pageSubtitle">从真实地点出发，重新发现文学与世界的联系。</div></header>
-<section class="page active" id="discoverPage"><div class="content"><div class="hero" id="heroCard"><div class="hero-copy"><small>THIS WEEK · 城市与文学</small><h2>文学有自己的气候</h2><p>循着风、雨、四季与记忆，走进不同文学的精神地貌。</p></div></div>
+<section class="page active" id="discoverPage"><div class="content"><div class="hero" id="heroCard"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ambrosius_Benson_-_Young_Woman_in_Orison_Reading_a_Book_of_Hours_-_WGA1891.jpg" alt="Ambrosius Benson《阅读祈祷书的年轻女子》，约1532年" loading="eager"><div class="hero-copy"><small>THE LIVING ATLAS · 文学与艺术</small><h2>世界是一座可以阅读的美术馆</h2><p>从一页手稿、一幅画、一条街道出发，去寻找文字如何塑造我们理解世界的方式。</p></div></div><div class="art-index" aria-label="文学艺术视觉索引"><a class="art-tile" href="https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Young_Woman_in_Orison_Reading_a_Book_of_Hours_-_WGA1891.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ambrosius_Benson_-_Young_Woman_in_Orison_Reading_a_Book_of_Hours_-_WGA1891.jpg" alt="文艺复兴时期阅读者肖像" loading="lazy"><span class="art-caption"><small>1532 · PAINTING</small>阅读，是一场私人远行</span></a><a class="art-tile" href="https://en.wikisource.org/wiki/File:First_Folio.jpg" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/First_Folio.jpg" alt="莎士比亚戏剧第一对开本标题页" loading="lazy"><span class="art-caption"><small>1623 · BOOK</small>文字成为时代</span></a><a class="art-tile" href="https://commons.wikimedia.org/wiki/File:Western_Canon_collage_(literature).png" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Western_Canon_collage_%28literature%29.png" alt="跨越时代的文学家肖像拼贴" loading="lazy"><span class="art-caption"><small>PORTRAITS · LITERATURE</small>不同世纪，同一束光</span></a></div>
 <div class="searchbox"><span aria-hidden="true">⌕</span><input id="globalSearch" placeholder="搜索作家、作品、地点或文学事件…" autocomplete="off" aria-label="搜索文学内容"><button class="search-submit" id="searchSubmit" type="button">搜索</button></div><div class="section-kicker">CURATED EXPLORATION</div><div class="section-title">从这里开始探索</div><div class="feature-grid"><div class="feature" data-go="map"><div class="num">01 / MAP</div><div><h3>沿地图找文学</h3><p>在真实地理空间中，发现作家足迹与文学地标。</p></div></div><div class="feature" data-go="map"><div class="num">02 / AUTHOR</div><div><h3>追随作家一生</h3><p>从出生、迁徙到创作，读懂地点背后的故事。</p></div></div><div class="feature" data-go="shelf"><div class="num">03 / LIBRARY</div><div><h3>收藏你的文境</h3><p>保存地点、作家与路线，建立个人文学地图。</p></div></div><div class="feature" id="randomExplore"><div class="num">04 / SERENDIPITY</div><div><h3>带我去一个地方</h3><p>随机开启一次文学漫游。</p></div></div><div class="feature" id="openJourney"><div class="num">05 / LITERARY JOURNEY</div><div><h3>走进一本书</h3><p>沿着《尤利西斯》的故事，漫游都柏林。</p></div></div></div>
 <div class="row-head"><div><div class="section-kicker">LITERARY CLIMATES</div><div class="section-title" style="margin-bottom:0">文学，是一场漫长的气候</div></div><span class="edition">8 LANDSCAPES</span></div><p class="climate-intro">从夏季的发酵到风沙中的传唱。以文学意象为线索，开启一场跨越地域的阅读漫游。</p><div class="literary-climates">
 <div class="climate-card"><div class="climate-region">越南文学 · 夏季</div><h3>酸涩黏腻的夏季</h3><p>故事总是在酸涩黏腻的夏季发酵又沉寂。</p><span class="climate-key">潮湿 · 发酵 · 沉寂</span><button class="text-btn climate-map-btn" data-climate-map="climate-vietnam">地图漫游 →</button></div>
