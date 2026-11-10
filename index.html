@@ -143,6 +143,61 @@ body{background:#e8e4da;background-image:radial-gradient(#7d76651a .65px,transpa
 .app[data-scene="shelf"] .place-card{background:#fffaf2;padding:11px;border:1px solid #e3d7c7}
 @media(max-width:520px){.app[data-scene="map"] .top,.app[data-scene="journey"] .top,.app[data-scene="shelf"] .top{padding-top:22px}}
 
+
+/* Distinct page compositions */
+#mapPage{background:#e7e3d6}
+.map-world-stage{background:#273b37;color:#f6efdf;padding:22px 16px 0;position:relative;overflow:hidden}
+.map-world-stage:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80% 5%,#c9b17c33,transparent 35%),repeating-linear-gradient(0deg,transparent 0 31px,#ffffff0a 32px)}
+.map-world-copy{position:relative;padding:9px 7px 17px;max-width:680px;margin:auto}
+.map-world-copy>span,.shelf-room-heading>span,.me-letterhead>span{font:9px Arial,sans-serif;letter-spacing:.24em;color:#d4bc8d}
+.map-world-copy h2{font-size:31px;line-height:1.35;font-weight:400;letter-spacing:.07em;margin:12px 0 8px}
+.map-world-copy p{font-size:12px;line-height:1.8;color:#d8d4c5;margin:0;max-width:310px}
+.map-world-stats{display:flex;align-items:center;gap:13px;margin-top:18px;font:11px Arial,sans-serif;color:#e8d8b8}
+.map-world-stats b{font-weight:400}.map-world-stats small{display:block;color:#b8b9a9;font-size:9px;margin-top:4px}.map-world-stats i{height:22px;width:1px;background:#ffffff38}
+.map-world-frame{position:relative;max-width:920px;margin:auto;padding:0 0 20px}
+#map{height:clamp(410px,65vh,650px);min-height:410px;border:1px solid #b5ad94;z-index:1;box-shadow:0 12px 34px #1118}
+.map-frame-caption{position:absolute;z-index:400;bottom:27px;left:12px;background:#263b37e8;color:#e9ddc4;padding:6px 9px;font:8px Arial,sans-serif;letter-spacing:.16em}
+.map-content{background:#f4efe5;padding-top:19px}
+.map-content .map-toolbar{padding-top:2px}
+.era-scroll-scene{height:275px;position:relative;overflow:hidden;background:#d8ddcf;margin:-18px -18px 0}
+.era-scroll-scene svg{width:100%;height:100%;display:block}
+.era-scroll-label{position:absolute;z-index:2;top:14px;left:20px;font:9px Arial,sans-serif;letter-spacing:.18em;color:#42574a}
+.era-scroll-title{position:absolute;z-index:2;left:22px;bottom:21px;color:#263d32;text-shadow:0 1px 8px #f4efe5aa}
+.era-scroll-title .edition{color:#526655}
+.era-scroll-title h2{font-size:29px;font-weight:500;margin:8px 0 3px}
+.era-scroll-title p{font-size:11px;margin:0;color:#4d5b4d}
+.era-cover-compact{min-height:0;padding:15px 18px;margin:0 -18px 18px;background:#e8e3d4;color:#3c493d;border-bottom:1px solid #c7c6b5}
+.era-cover-compact:before{content:none}
+.era-cover-compact h2{font-size:15px;line-height:1.8;margin:6px 0 0;font-weight:400}
+.era-cover-compact .edition{color:#697361}
+#shelfPage{background:#e9dfd1}
+.shelf-room{background:linear-gradient(145deg,#39251f,#5b3b2d 55%,#76543e);color:#f7eddd;padding:23px 18px 17px;position:relative;overflow:hidden}
+.shelf-room:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0,#d6b37b28,transparent 55%)}
+.shelf-room-heading,.shelf-room-foot{position:relative;z-index:1}
+.shelf-room-heading h2{font-size:27px;font-weight:400;line-height:1.45;letter-spacing:.05em;margin:12px 0 6px}
+.shelf-room-heading p{font-size:11px;color:#dfcbb5;margin:0}
+.bookcase-art{position:relative;margin:20px -2px 13px;padding:14px 10px 0;background:#2b1d18;border:7px solid #79583e;box-shadow:inset 0 0 0 2px #b08b61,0 12px 22px #160d0a66}
+.bookcase-row{height:55px;display:flex;align-items:stretch;gap:4px;padding:0 5px 7px;border-bottom:9px solid #956d48;box-shadow:0 5px 0 #38251b;margin-bottom:7px}
+.bookcase-row i{display:block;flex:1;border-radius:2px 2px 0 0;background:linear-gradient(90deg,#6f3328,#a35e43 35%,#512c25);box-shadow:inset 3px 0 #ffffff18,inset -2px 0 #170e0b55}
+.bookcase-row i:nth-child(3n){background:linear-gradient(90deg,#34483b,#66765a 45%,#28382f)}
+.bookcase-row i:nth-child(4n){background:linear-gradient(90deg,#9b7948,#c09a61 45%,#725333)}
+.bookcase-row i:nth-child(5n){background:linear-gradient(90deg,#283a4a,#52697b 45%,#1e2c39)}
+.bookcase-row i:nth-child(2n){transform:scaleY(.88);transform-origin:bottom}
+.bookcase-row.second i:nth-child(odd){transform:scaleY(.76);transform-origin:bottom}
+.bookcase-row.third{border-bottom:0;margin-bottom:0}
+.shelf-room-foot{display:flex;justify-content:space-between;font:8px Arial,sans-serif;letter-spacing:.14em;color:#cbb392}
+#shelfPage>.content{background:#f4efe5;padding-top:20px}
+#mePage{background:#e9e7de}
+.me-letterhead{padding:29px 23px 23px;background:linear-gradient(145deg,#dfe2d6,#f0eadc);position:relative;overflow:hidden;color:#344338}
+.me-letterhead:after{content:"";position:absolute;width:210px;height:210px;border:1px solid #77857544;border-radius:50%;right:-75px;bottom:-95px;box-shadow:0 0 0 18px #7785750c,0 0 0 38px #7785750a}
+.me-letter-mark{width:40px;height:40px;border:1px solid #778575;display:grid;place-items:center;font-size:22px;margin-bottom:17px}
+.me-letterhead>span{color:#667664}
+.me-letterhead h2{font-size:27px;line-height:1.55;font-weight:400;letter-spacing:.06em;margin:13px 0 8px}
+.me-letterhead p{font-size:11px;color:#697365;margin:0}
+.me-letter-rule{height:1px;background:#9ba392;margin-top:23px;width:70%}
+#mePage>.content{background:#f4efe5;padding-top:18px}
+@media(min-width:700px){.map-world-copy{padding-top:25px}.map-world-copy h2{font-size:40px}.map-world-frame{padding-bottom:26px}.era-scroll-scene{height:340px}.shelf-room{padding-left:28px;padding-right:28px}}
+
 </style></head>
 <body><main class="app">
 <header class="top"><div class="brandline"><div class="brand">文境 · LITERARY ATLAS</div><div class="edition">VOL. 01 / CHINA & THE WORLD</div></div><h1 class="headline" id="pageTitle">让每一座城市<br>都有值得阅读的故事</h1><div class="subhead" id="pageSubtitle">从真实地点出发，重新发现文学与世界的联系。</div></header>
@@ -159,7 +214,7 @@ body{background:#e8e4da;background-image:radial-gradient(#7d76651a .65px,transpa
 <div class="climate-card"><div class="climate-region">印度文学 · 轮回</div><h3>在神秘中探索人性</h3><p>把轮回、解脱与人性揉进一场神秘的探索。</p><span class="climate-key">轮回 · 解脱 · 人性</span><button class="text-btn climate-map-btn" data-climate-map="climate-india">地图漫游 →</button></div>
 <div class="climate-card"><div class="climate-region">阿拉伯文学 · 风沙</div><h3>风沙与口述的回响</h3><p>似乎隐在风沙与口述中，等待被传唱。</p><span class="climate-key">风沙 · 口述 · 传唱</span><button class="text-btn climate-map-btn" data-climate-map="climate-arabic">地图漫游 →</button></div>
 </div><div class="footer-note">文学气候是编辑性的阅读入口与意象表达，不代表对某一国家或文学传统的唯一概括。后续将补充对应作家、作品、真实地点与来源资料。</div><div class="row-head"><div><div class="section-kicker">EDITOR'S PICKS</div><div class="section-title" style="margin-bottom:0">值得走近的地方</div></div><button class="text-btn" data-go="map">打开地图 →</button></div><div class="place-list" id="discoverPlaces"></div><div class="footer-note">文境所标注的文学关系分为真实居住 / 活动、作品场景、原型参考与文化关联。虚构场景不会被标记为真实发生地点。</div></div></section>
-<section class="page" id="mapPage"><div class="content"><div class="section-kicker">LITERARY GEOGRAPHY</div><div class="section-title">在地图上遇见文学</div><div class="map-toolbar"><button class="chip active" data-filter="all">全部地点</button><button class="chip" data-filter="author">作家足迹</button><button class="chip" data-filter="place">文学地标</button><button class="chip" data-filter="culture">文化关联</button></div><div class="map-drillbar" id="mapDrillbar" aria-label="地图层级导航"></div><p class="map-drill-hint" id="mapDrillHint">点击地图上的区域继续下钻：区域 → 城市 → 具体文学地点。</p><div class="map-legend"><span><i class="legend-dot author-dot"></i>作家足迹</span><span><i class="legend-dot place-dot"></i>文学地标</span><span><i class="legend-dot culture-dot"></i>文化关联</span><span class="legend-count" id="mapCount">13 个地点</span></div><div id="map"></div><p class="map-note">地图底图 © OpenStreetMap contributors。标记表示已录入的真实地点；点击标记查看关系类型与来源说明。地图数据与文学内容分别维护。</p><div class="row-head"><div class="section-title" style="margin:0">地图中的地点</div><span class="edition">13 PLACES</span></div><div class="place-list" id="mapPlaces"></div></div></section>
+<section class="page" id="mapPage"><div class="map-world-stage"><div class="map-world-copy"><span>THE WORLD IS A BOOK</span><h2>让地图，<br>成为文学的入口。</h2><p>从一座城市出发，沿着作家的足迹，寻找故事留下的坐标。</p><div class="map-world-stats"><b>01 <small>真实地点</small></b><i></i><b>02 <small>作家足迹</small></b><i></i><b>03 <small>作品现场</small></b></div></div><div class="map-world-frame"><div id="map"></div><span class="map-frame-caption">LITERARY ATLAS · FIELD MAP / 01</span></div></div><div class="content map-content"><div class="section-kicker">LITERARY GEOGRAPHY / 地图档案</div><div class="map-toolbar"><button class="chip active" data-filter="all">全部地点</button><button class="chip" data-filter="author">作家足迹</button><button class="chip" data-filter="place">文学地标</button><button class="chip" data-filter="culture">文化关联</button></div><div class="map-drillbar" id="mapDrillbar" aria-label="地图层级导航"></div><p class="map-drill-hint" id="mapDrillHint">点击地图上的区域继续下钻：区域 → 城市 → 具体文学地点。</p><div class="map-legend"><span><i class="legend-dot author-dot"></i>作家足迹</span><span><i class="legend-dot place-dot"></i>文学地标</span><span><i class="legend-dot culture-dot"></i>文化关联</span><span class="legend-count" id="mapCount">13 个地点</span></div><p class="map-note">地图底图 © OpenStreetMap contributors。标记表示已录入的真实地点；点击标记查看关系类型与来源说明。地图数据与文学内容分别维护。</p><div class="row-head"><div class="section-title" style="margin:0">地图中的地点</div><span class="edition">WORLD INDEX</span></div><div class="place-list" id="mapPlaces"></div></div></section>
 
 <section class="page" id="journeyPage"><div class="content">
 <div class="section-kicker">LITERARY JOURNEY / 作品漫游</div>
@@ -174,7 +229,7 @@ body{background:#e8e4da;background-image:radial-gradient(#7d76651a .65px,transpa
 </div></section>
 <section class="page" id="eraPage"><div class="content">
 <div class="section-kicker">A PERSON · AN AGE · A LIVING ATLAS</div>
-<div class="era-cover"><div class="edition">NORTHERN SONG DYNASTY · 1037—1101</div><h2>苏轼与他的时代</h2><p>一个人的命运，如何与一个王朝的政治、城市和文化彼此交织？</p><div class="era-tags"><span>北宋中后期</span><span>士大夫政治</span><span>文学与日常生活</span></div></div>
+<div class="era-scroll-scene" role="img" aria-label="水墨山水长卷，表现北宋山水意境"><div class="era-scroll-label">A LIFE IN THE SONG DYNASTY · 北宋长卷</div><svg viewBox="0 0 720 270" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="inkWash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e5e0ce"/><stop offset="1" stop-color="#aab4a1"/></linearGradient><linearGradient id="mist" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4f0e5" stop-opacity=".1"/><stop offset="1" stop-color="#f4f0e5" stop-opacity=".9"/></linearGradient></defs><rect width="720" height="270" fill="url(#inkWash)"/><path d="M0 164 Q75 130 130 70 Q172 26 222 102 Q260 142 310 92 Q355 42 414 110 Q468 168 520 100 Q590 18 720 105 L720 270H0Z" fill="#6c7d70" opacity=".65"/><path d="M0 192 Q90 128 160 150 Q215 168 285 117 Q350 75 416 160 Q488 224 558 154 Q625 95 720 148 L720 270H0Z" fill="#465d52" opacity=".75"/><path d="M0 215 Q115 170 214 207 T420 203 T720 195 L720 270H0Z" fill="#314c43" opacity=".85"/><path d="M0 155 Q120 128 230 165 T450 160 T720 145" fill="none" stroke="#f7f3e8" stroke-width="17" opacity=".5"/><path d="M55 0 Q95 65 66 132 M560 0 Q520 65 568 120" fill="none" stroke="#344b40" stroke-width="2" opacity=".18"/><g fill="#293f35" opacity=".65"><path d="M115 192l8-33 8 33zm18 4l7-25 7 25zm430-31l9-38 9 38zm19 9l7-28 7 28z"/></g><path d="M0 0H720V270H0Z" fill="url(#mist)"/></svg><div class="era-scroll-title"><div class="edition">NORTHERN SONG DYNASTY · 1037—1101</div><h2>苏轼与他的时代</h2><p>把一生放进山河与时代的长卷里。</p></div></div><div class="era-cover era-cover-compact"><div class="edition">A PERSON · AN AGE</div><h2>一个人的命运，如何与一个王朝的政治、城市和文化彼此交织？</h2><p>一个人的命运，如何与一个王朝的政治、城市和文化彼此交织？</p><div class="era-tags"><span>北宋中后期</span><span>士大夫政治</span><span>文学与日常生活</span></div></div>
 <p class="era-lead">苏轼不是从历史课本里走出来的“乐天派”。他经历科举入仕、变法争论、乌台诗案、黄州贬谪与岭南远行。要理解他的旷达，得先看见他所处的制度、冲突和生活现场。</p><div class="era-home-invite"><div><span class="section-kicker">START WITH THE PERSON</span><b>先认识苏轼，再走进北宋</b><p>打开人物档案，查看完整生平、作品关系与人生地点；也可以从黄州开始，在地图上追踪他的生命现场。</p></div><div class="actions" style="margin:0;flex-wrap:wrap"><button type="button" class="primary" id="eraOpenAuthor">苏轼人物档案 →</button><button type="button" class="secondary" id="eraOpenMap">从黄州开始看地图</button></div></div>
 <div class="era-section-head"><span>01 / A LIFE IN TIME</span><b>苏轼的人生时间轴</b></div><div id="songTimeline" class="song-timeline"></div>
 <div class="era-section-head"><span>02 / THE WORLD AROUND HIM</span><b>北宋时代切面</b></div><p class="era-muted">从制度到街市，从政策争论到文人生活。点击主题，进入一段具体的历史解释。</p><div id="songTopics" class="song-topic-grid"></div>
@@ -190,8 +245,8 @@ body{background:#e8e4da;background-image:radial-gradient(#7d76651a .65px,transpa
 <div class="era-section-head"><span>05 / WORKS IN CONTEXT</span><b>从作品回到现场</b></div><div id="songWorks" class="archive-link-list"></div>
 <div class="era-reading-note"><b>这次探索的阅读方法</b><p>不把后世塑造的“东坡形象”直接当成历史事实。时间轴区分可核对的事件与编辑性解释；地点区分现实地标、城市级定位与文学空间；专题附参考资料入口，后续可继续补充原始文献与研究成果。</p></div>
 </div></section>
-<section class="page" id="shelfPage"><div class="content"><div class="section-kicker">YOUR COLLECTION</div><div class="section-title">我的文学书架</div><div class="shelf-tabs"><button class="chip active" data-shelf="places">地点收藏</button><button class="chip" data-shelf="authors">作家收藏</button><button class="chip" data-shelf="works">作品收藏</button></div><div id="shelfContent"></div></div></section>
-<section class="page" id="mePage"><div class="content"><div class="section-kicker">PERSONAL ATLAS</div><div class="section-title">我的文境</div><div class="profile-card"><h2>每一次出发，<br>都是一次阅读。</h2><p style="font-size:12px;color:var(--muted)">你的文学探索，从这里慢慢累积。</p><div class="statrow"><div class="stat"><b id="savedCount">0</b><small>收藏地点</small></div><div class="stat"><b id="savedAuthorCount">0</b><small>收藏作家</small></div><div class="stat"><b id="savedWorkCount">0</b><small>收藏作品</small></div></div></div><div class="feature-grid"><div class="feature" data-go="shelf"><div class="num">COLLECTION</div><div><h3>我的收藏</h3><p>整理保存的文学地点与内容。</p></div></div><div class="feature" id="clearHistory"><div class="num">PREFERENCES</div><div><h3>本地数据</h3><p>收藏仅保存在当前浏览器。</p></div></div></div><div class="footer-note">当前为可交互前端原型。地图使用 OpenStreetMap / Leaflet；正式上线前需评估瓦片服务使用政策、访问量和商业使用要求。</div></div></section>
+<section class="page" id="shelfPage"><div class="shelf-room"><div class="shelf-room-heading"><span>YOUR PRIVATE LIBRARY</span><h2>把读过的世界，<br>收进自己的书房。</h2><p>每一次收藏，都是一册尚未合上的故事。</p></div><div class="bookcase-art" aria-label="木质书架与藏书"><div class="bookcase-row"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bookcase-row second"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bookcase-row third"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="shelf-room-foot"><span>THE BOOKS YOU KEEP</span><span>VOL. 01 — PERSONAL ARCHIVE</span></div></div><div class="content"><div class="section-kicker">YOUR COLLECTION</div><div class="section-title">我的文学书架</div><div class="shelf-tabs"><button class="chip active" data-shelf="places">地点收藏</button><button class="chip" data-shelf="authors">作家收藏</button><button class="chip" data-shelf="works">作品收藏</button></div><div id="shelfContent"></div></div></section>
+<section class="page" id="mePage"><div class="me-letterhead"><div class="me-letter-mark">文</div><span>NOTES FROM YOUR READING LIFE</span><h2>读过的书，<br>走过的路，<br>都会留下痕迹。</h2><p>一份持续生长的私人文学手札。</p><div class="me-letter-rule"></div></div><div class="content"><div class="section-kicker">PERSONAL ATLAS</div><div class="section-title">我的文境</div><div class="profile-card"><h2>每一次出发，<br>都是一次阅读。</h2><p style="font-size:12px;color:var(--muted)">你的文学探索，从这里慢慢累积。</p><div class="statrow"><div class="stat"><b id="savedCount">0</b><small>收藏地点</small></div><div class="stat"><b id="savedAuthorCount">0</b><small>收藏作家</small></div><div class="stat"><b id="savedWorkCount">0</b><small>收藏作品</small></div></div></div><div class="feature-grid"><div class="feature" data-go="shelf"><div class="num">COLLECTION</div><div><h3>我的收藏</h3><p>整理保存的文学地点与内容。</p></div></div><div class="feature" id="clearHistory"><div class="num">PREFERENCES</div><div><h3>本地数据</h3><p>收藏仅保存在当前浏览器。</p></div></div></div><div class="footer-note">当前为可交互前端原型。地图使用 OpenStreetMap / Leaflet；正式上线前需评估瓦片服务使用政策、访问量和商业使用要求。</div></div></section>
 <nav class="bottom"><button class="nav active" data-page="discover"><b>⌂</b>发现</button><button class="nav" data-page="map"><b>◎</b>地图</button><button class="nav" data-page="era"><b>文</b>时代</button><button class="nav" data-page="shelf"><b>▤</b>书架</button><button class="nav" data-page="me"><b>◯</b>我的</button></nav>
 </main>
 <div class="detail-overlay" id="detailOverlay"><article class="detail"><div class="detail-top"><span class="section-kicker">FIELD NOTES / 文学地点档案</span><button class="close" id="closeDetail">×</button></div><div id="detailBody"></div></article></div>
