@@ -198,6 +198,34 @@ body{background:#e8e4da;background-image:radial-gradient(#7d76651a .65px,transpa
 #mePage>.content{background:#f4efe5;padding-top:18px}
 @media(min-width:700px){.map-world-copy{padding-top:25px}.map-world-copy h2{font-size:40px}.map-world-frame{padding-bottom:26px}.era-scroll-scene{height:340px}.shelf-room{padding-left:28px;padding-right:28px}}
 
+
+@media(min-width:800px){
+.app{max-width:1120px;padding-bottom:88px}
+.bottom{width:min(1120px,100%)}
+.top{padding-left:34px;padding-right:34px}
+.content{padding-left:34px;padding-right:34px}
+.map-world-stage{padding:30px 34px 26px;display:grid;grid-template-columns:minmax(240px,.72fr) minmax(0,1.8fr);gap:26px;align-items:center}
+.map-world-copy{padding:18px 0 18px;max-width:none}
+.map-world-copy h2{font-size:36px}
+.map-world-frame{width:100%;padding:0}
+#map{height:560px;min-height:560px}
+.map-frame-caption{bottom:8px}
+.map-content{padding:25px 34px}
+.era-scroll-scene{height:400px;margin:-25px -34px 0}
+.era-scroll-title{left:38px;bottom:32px}
+.era-scroll-title h2{font-size:40px}
+.era-cover-compact{margin:0 -34px 22px;padding:20px 34px}
+.shelf-room{padding:34px}
+.shelf-room-heading h2{font-size:36px}
+.bookcase-art{max-width:850px;margin:28px auto 18px;padding:20px 18px 0;border-width:10px}
+.bookcase-row{height:78px;gap:8px;border-bottom-width:12px}
+.shelf-room-foot{max-width:850px;margin:auto}
+#shelfPage>.content{padding:28px 34px}
+.me-letterhead{padding:45px 42px}
+.me-letterhead h2{font-size:36px}
+#mePage>.content{padding:26px 42px}
+}
+
 </style></head>
 <body><main class="app">
 <header class="top"><div class="brandline"><div class="brand">文境 · LITERARY ATLAS</div><div class="edition">VOL. 01 / CHINA & THE WORLD</div></div><h1 class="headline" id="pageTitle">让每一座城市<br>都有值得阅读的故事</h1><div class="subhead" id="pageSubtitle">从真实地点出发，重新发现文学与世界的联系。</div></header>
@@ -399,7 +427,7 @@ function mapVisiblePlaces(){return places.filter(p=>activeFilter==='all'||(activ
 function mapGroup(items,keyFn,labelFn){const groups=new Map();items.forEach(p=>{const key=keyFn(p);if(!groups.has(key))groups.set(key,{key,label:labelFn(p),items:[]});groups.get(key).items.push(p);});return [...groups.values()].map(g=>({...g,coords:[g.items.reduce((n,p)=>n+p.coords[0],0)/g.items.length,g.items.reduce((n,p)=>n+p.coords[1],0)/g.items.length]}));}
 function renderMapDrillbar(){const el=$('#mapDrillbar');if(!el)return;const parts=[['全部区域','region'],...(mapDrillLevel!=='region'?[[mapDrillRegion,'city']]:[]),...(mapDrillLevel==='place'?[[mapDrillCity,'place']]:[])];el.innerHTML=parts.map((x,i)=>'<button type="button" data-map-level="'+x[1]+'" '+(i===parts.length-1?'disabled':'')+'>'+esc(x[0])+'</button>'+(i<parts.length-1?'<span class="sep">/</span>':'')).join('');el.querySelectorAll('[data-map-level]').forEach(b=>b.onclick=()=>{mapDrillLevel=b.dataset.mapLevel;if(mapDrillLevel==='region'){mapDrillRegion='';mapDrillCity='';}else if(mapDrillLevel==='city')mapDrillCity='';renderMapData(true);});}
 function renderMapData(fit=false){if(!map)return;const all=mapVisiblePlaces(),scoped=mapDrillLevel==='region'?all:all.filter(p=>mapRegion(p)===mapDrillRegion),groups=mapDrillLevel==='region'?mapGroup(scoped,mapRegion,mapRegion):mapDrillLevel==='city'?mapGroup(scoped,mapCity,mapCity):scoped.map(p=>({key:p.id,label:p.name,items:[p],coords:p.coords}));Object.values(markers).forEach(m=>map.removeLayer(m));markers={};groups.forEach(g=>{const isPlace=mapDrillLevel==='place',p=g.items[0],color=isPlace?(p.kind==='author'?'#9b563d':p.kind==='culture'?'#b18b4b':'#66735a'):'#66735a',count=g.items.length;const icon=isPlace?null:L.divIcon({className:'',html:'<div style="min-width:30px;height:30px;padding:0 7px;border-radius:18px;background:#66735a;border:2px solid #fffaf0;color:white;display:flex;align-items:center;justify-content:center;font:11px Arial;box-shadow:0 2px 8px #0003">'+count+'</div>',iconSize:[count>9?42:34,34],iconAnchor:[17,17]});const marker=isPlace?L.circleMarker(g.coords,{radius:8,color:'#fffaf0',weight:2,fillColor:color,fillOpacity:1}):L.marker(g.coords,{icon});const title=isPlace?g.label:g.label;const popup=isPlace?'<b>'+esc(p.name)+'</b><br>'+esc(p.city)+'<br><span style="color:#9b563d">'+esc(p.relation)+'</span><br><a href="#" data-open="'+p.id+'">查看档案 →</a>':'<b>'+esc(title)+'</b><br>'+count+' 个地点<br><span style="color:#9b563d">点击继续下钻 →</span>';marker.bindPopup(popup).addTo(map);if(isPlace){marker.on('popupopen',()=>{const link=document.querySelector('[data-open="'+p.id+'"]');if(link)link.onclick=e=>{e.preventDefault();openPlace(p);};});markers[p.id]=marker;}else{marker.on('click',()=>{if(mapDrillLevel==='region'){mapDrillRegion=g.key;mapDrillLevel='city';}else{mapDrillCity=g.key;mapDrillLevel='place';}renderMapData(true);});markers['group-'+g.key]=marker;}});const count=$('#mapCount');if(count)count.textContent=scoped.length+' 个地点';const hint=$('#mapDrillHint');if(hint)hint.textContent=mapDrillLevel==='region'?'当前层级：区域。点击圆形数量标记，查看该区域内的城市。':mapDrillLevel==='city'?'当前区域：'+mapDrillRegion+'。点击城市标记，查看具体文学地点。':'当前路径：'+mapDrillRegion+' / '+mapDrillCity+'。点击地点标记，打开文学档案。';renderMapDrillbar();const bounds=L.latLngBounds(groups.map(g=>g.coords));if(fit&&bounds.isValid())map.fitBounds(bounds,{padding:[30,30],maxZoom:mapDrillLevel==='region'?5:mapDrillLevel==='city'?8:14});}
-function initMap(){if(map)return;map=L.map('map',{scrollWheelZoom:false}).setView([28,75],3);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);renderMapData(true);}
+function initMap(){if(map)return;map=L.map('map',{scrollWheelZoom:false}).setView([25,0],2);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);renderMapData(true);}
 function filterMap(f){activeFilter=f;document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter===f));renderMapData(true);}
 function focusMapPlace(p){mapDrillRegion=mapRegion(p);mapDrillCity=mapCity(p);mapDrillLevel='place';renderMapData(true);setTimeout(()=>{const m=markers[p.id];if(m){map.setView(p.coords,15);m.openPopup();}},80);}
 function renderShelf(){const types={places:{data:places,ids:saved.places,open:openPlace},authors:{data:authors,ids:saved.authors,open:openAuthor},works:{data:works,ids:saved.works,open:openWork}};const t=types[shelfType];$('#shelfContent').innerHTML=t.ids.length?t.data.filter(x=>t.ids.includes(x.id)).map(x=>`<div class="place-card" data-shelf-id="${x.id}"><div class="thumb">${x.image?`<img src="${x.image}" alt="${esc(x.name)}" onerror="this.parentElement.textContent='文境收藏'">`:'文境收藏'}</div><div><div class="section-kicker">${esc(x.city||x.years||x.author||'COLLECTION')}</div><h3>${esc(x.name)}</h3><p>已加入你的文学书架</p></div></div>`).join(''):'<div class="empty">书架还是空的。<br>在地点或作家档案中点击「收藏」，把喜欢的文学故事留在这里。</div>';document.querySelectorAll('[data-shelf-id]').forEach(el=>el.onclick=()=>t.open(t.data.find(x=>x.id===el.dataset.shelfId)));}
